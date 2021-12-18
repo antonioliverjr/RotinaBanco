@@ -26,6 +26,8 @@ class Contas(ABC, Agencias):
     def saldo(self, saldo):
         if not saldo > 0:
             raise ValueError("O Saldo não pode ser negativo")
+        elif not isinstance(saldo, (int, float)):
+            raise ValueError("O Saldo deve conter números")
         self.__saldo = saldo
 
     def deposito(self, valor):
