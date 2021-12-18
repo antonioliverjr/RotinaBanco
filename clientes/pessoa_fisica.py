@@ -8,7 +8,7 @@ class PessoaFisica(Pessoas):
 
     @property
     def cpf(self):
-        return '{:*>11}'.format('')
+        return self.__cpf
 
     @cpf.setter
     def cpf(self, cpf):
