@@ -2,9 +2,9 @@ from clientes.pessoa_fisica import PessoaFisica
 
 
 class PessoaJuridica(PessoaFisica):
-    def __init__(self, nome_fantasia: str, cnpj: str, nome: str, idade: int, rua: str, casa: int, bairro: str
-                 , cpf: str, cep: int = None):
-        super().__init__(nome, idade, rua, casa, bairro, cpf, cep)
+    def __init__(self, nome_fantasia: str, cnpj: str, responsavel: PessoaFisica):
+        super().__init__(responsavel.nome, responsavel.idade, responsavel.rua, responsavel.casa, responsavel.bairro,
+                         responsavel.cpf, responsavel.cep)
         self.nome_fantasia = nome_fantasia
         self.__cnpj = cnpj
 
